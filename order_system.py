@@ -81,14 +81,15 @@ def place_order(menu):
 
             # TODO: Create an order_total from the prices list using sum()
             # TODO: Round the prices to 2 decimal places.
-
+            order_total = sum(prices_list)
+            order_total = round(order_total, 2)
 
             # TODO: Exit the ordering loop
             # TODO: Either use a break statement or set the condition to False
-
+            order_open = False
 
     # TODO: Return the order list and the order total
-
+    return order, order_total
 
 def update_order(order, menu_selection, menu_items):
     """
