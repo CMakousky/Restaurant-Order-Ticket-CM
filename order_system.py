@@ -24,9 +24,6 @@ def place_order(menu):
     # Get the menu items mapped to the menu numbers
     menu_items = get_menu_items_dict(menu)
 
-    print(f"Menu:\n{menu}\n")
-    print(f"Menu Items:\n{menu_items}\n")
-
     # Launch the store and present a greeting to the customer
     print("Welcome to the Generic Take Out Restaurant.")
 
