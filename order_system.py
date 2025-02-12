@@ -28,8 +28,7 @@ def place_order(menu):
     print("Welcome to the Generic Take Out Restaurant.")
 
     # Create a continuous while loop so customers can order multiple items
-    order_open = True
-    while order_open == True:
+    while True:
         # Ask the customer what they want to order
         print("What would you like to order?")
 
@@ -54,7 +53,7 @@ def place_order(menu):
                 i += 1
 
         # Ask customer to input menu item number
-        menu_choice = input("Please select a menu item. ")
+        menu_choice = input("\nType menu number: ")
 
         # Update the order list using the update_order function
         # Send the order list, menu selection, and menu items as arguments
@@ -62,7 +61,7 @@ def place_order(menu):
 
         # Ask the customer if they would like to order anything else
         # Let the customer know if they should type 'n' or 'N' to quit
-        close_order = input("Would you like to order anything else? Press 'n' or 'N' to close the order. ")
+        close_order = input("Would you like to keep ordering? (N) to quit: ")
 
         # Write a conditional statement that checks the user's input
         # The conditional statement should check for 'n' or 'N'
@@ -85,7 +84,6 @@ def place_order(menu):
 
             # Exit the ordering loop
             # Either use a break statement or set the condition to False
-            order_open = False
             break
 
     # Return the order list and the order total
@@ -118,7 +116,7 @@ def update_order(order, menu_selection, menu_items):
 
             # Ask the customer for the quantity of the menu item
             # Use the item name variable in the question
-            quantity = input(f"How many of {item_name} would you like? ")
+            quantity = input(f"What quantity of {item_name} would you like? \n(This will default to 1 if number is not entered)\n")
 
             # Check if the quantity is a number, default to 1 if not
             if quantity.isdigit():
@@ -145,7 +143,7 @@ def update_order(order, menu_selection, menu_items):
     # Print the menu selection and 
     # Tell the customer they didn't select a menu option
     else:
-        print(f"{menu_selection} is not a valid menu item!")
+        print(f"{menu_selection} was not a menu option.")
 
     # Return the updated order
     return order
